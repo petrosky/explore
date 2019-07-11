@@ -1,0 +1,16 @@
+{% extends 'widgets/base.html' %}
+
+{% block content %}
+
+<h1>Widget Detail Page.</h1>
+{% if widget %}
+
+<ul>
+
+    <li>{{ widget.name }}</li>
+    <li>{{ widget.desc}}</li>
+
+</ul>
+
+{% endif %}
+{% endblock content %}

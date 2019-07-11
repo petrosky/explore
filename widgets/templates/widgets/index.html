@@ -1,0 +1,14 @@
+{% extends 'widgets/base.html' %}
+
+{% block content %}
+<h1>Widgets.</h1>
+{% if widgets %}
+ <ul>
+    {% for widget in widgets %}
+        <li><a href="/widget/{{ widget.id }}">{{ widget.name }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No widgets are available.</p>
+{% endif %}
+{% endblock content %}

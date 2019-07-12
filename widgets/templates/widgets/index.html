@@ -5,7 +5,7 @@
 {% if widgets %}
  <ul>
     {% for widget in widgets %}
-        <li><a href="/widget/{{ widget.id }}">{{ widget.name }}</a></li>
+        <li><a href="{% url 'widget-detail' widget.id %}">{{ widget.name }}</a></li>
     {% endfor %}
     </ul>
 {% else %}

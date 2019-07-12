@@ -1,5 +1,5 @@
-from django.shortcuts import render, get_object_or_404
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect,get_object_or_404
+from django.views.generic import ListView
 from django.contrib import messages
 from .models import Widget
 from .forms import AddWidget
@@ -11,6 +11,13 @@ def index(request):
 
     context = {'widgets': widgets}
     return render(request, 'widgets/index.html', context)
+
+
+class WidgetListView(ListView):
+    model = Widget
+    template_name = 'widgets/index.html'
+    context_object_name = 'widgets'
+
 
 
 def about(request):
